@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration_styles.css}">
+</head>
+<body>
+<main>
+    <div th:align="center" class="box">
+        <h2>Register</h2>
+        <form th:action="@{/registration/save}" th:method="post" th:object="${user}">
+            <div class="user_input">
+                <input type="text" th:field="*{username}" required="required"><br>
+                <label th:for="username" th:text="Username"></label>
+                <p id="username_errors" class="errors"></p>
+            </div>
+            <div class="user_input">
+                <input type="email" th:field="*{email}" required="required"><br>
+                <label th:for="email" th:text="Email"></label>
+                <p id="email_errors" class="errors"></p>
+            </div>
+            <div class="user_input">
+                <input type="password" th:field="*{password}" required="required"><br>
+                <label th:for="password" th:text="Password"></label>
+                <p id="password_errors" class="errors"></p>
+            </div>
+            <div class="user_input">
+                <input type="password" name="repeat" id="repeat" required="required"><br>
+                <label for="repeat">Repeat Password</label>
+                <p id="repeat_errors" class="errors"></p>
+            </div>
+            <div class="save_btn save_button">
+                <button type="submit" class="button" id="button">Save</button>
+            </div>
+        </form>
+    </div>
+</main>
+<script type="text/javascript" th:src="@{js/user_registration_js.js}"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/codex_base?serverTimezone=Europe/Moscow&useSSL=false
+    username: root
+    password: 0987654321KnKn
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8082
